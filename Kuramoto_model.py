@@ -45,7 +45,7 @@ class KuramotoModel:
         """
         self.N = w.size
         self.w = w
-        self.A = [E[E[:, 0] == i, 1].astype(int) for i in range(0, self.N)]  # Edge list E into adjacency list A.
+        self.A = [E[E[:, 0] == i, 1].astype(int).tolist() for i in range(0, self.N)]  # Edge list E into adjacency list A.
         self.d = [len(self.A[i]) for i in range(0, self.N)]
         self.c = c
         self.d_theta = np.zeros(self.N)
